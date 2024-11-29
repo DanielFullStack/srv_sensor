@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "spring.web.reactive.base-path",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.reactive.base-path'"
+  },
+  {
+    "name": "backend.api.url",
+    "type": "java.lang.String",
+    "description": "A description for 'backend.api.url'"
+  },
+  {
+    "name": "sensor.id",
+    "type": "java.lang.String",
+    "description": "A description for 'sensor.id'"
+  }
+]}
