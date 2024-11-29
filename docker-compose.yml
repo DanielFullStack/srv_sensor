@@ -10,4 +10,4 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=prod
       - SENSOR_ID=sensor_1
-      - BACKEND_API_URL=http://srv_ingestao:8083/api/v1/sensors
+      - BACKEND_API_URL=http://srv_ingestion:8083/api/v1/ingestion/sensors

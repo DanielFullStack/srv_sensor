@@ -42,7 +42,7 @@ public class SensorService {
     public void sendDataToBackend(PressureDTO pressureDTO) {
         logger.debug("Sending data to backend: {}", pressureDTO);
         webClient.post()
-                .uri(backendApiUrl + "/api/pressure")
+                .uri(backendApiUrl)
                 .bodyValue(pressureDTO)
                 .retrieve()
                 .bodyToMono(Void.class)
