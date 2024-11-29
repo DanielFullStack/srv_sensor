@@ -1,0 +1,13 @@
+services:
+  srv_sensor:
+    image: srv_sensor:latest
+    container_name: srv_sensor
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - SENSOR_ID=sensor_1
+      - BACKEND_API_URL=http://localhost:8082/api/v1/sensors
