@@ -7,3 +7,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    networks:
+      - my-proxy-net
+
+networks:
+  my-proxy-net:
+    external:
+      name: aguas_network
