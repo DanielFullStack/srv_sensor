@@ -1,7 +1,7 @@
 services:
-  srv_sensor:
-    image: srv_sensor:latest
-    container_name: srv_sensor
+  srv_sensor_1:
+    image: srv_sensor_1:latest
+    container_name: srv_sensor_1
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,6 +9,29 @@ services:
       - "8080:8080"
     networks:
       - my-proxy-net
+    environment:
+      - SERVER_PORT=8080
+      - SENSOR_ID=sensor_1
+      - BACKEND_API_URL=http://172.18.0.4:8083/api/v1/ingestion/sensors
+      - SPRING_MAIN_ALLOW_BEAN_DEFINITION_OVERRIDING=true
+      - SPRING_WEB_REACTIVE_BASE_PATH=/
+
+  srv_sensor_2:
+    image: srv_sensor_2:latest
+    container_name: srv_sensor_2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - my-proxy-net
+    environment:
+      - SERVER_PORT=8081
+      - SENSOR_ID=sensor_2
+      - BACKEND_API_URL=http://172.18.0.4:8083/api/v1/ingestion/sensors
+      - SPRING_MAIN_ALLOW_BEAN_DEFINITION_OVERRIDING=true
+      - SPRING_WEB_REACTIVE_BASE_PATH=/
 
 networks:
   my-proxy-net:
