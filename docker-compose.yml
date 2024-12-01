@@ -35,5 +35,5 @@ services:
 
 networks:
   my-proxy-net:
-    external:
-      name: aguas_network
+    name: aguas_network
+    external: true
