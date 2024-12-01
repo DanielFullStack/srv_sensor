@@ -18,8 +18,7 @@ public class SensorController {
         this.sensorService = sensorService;
     }
 
-    // Método agendado para executar a cada 5 segundos
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 30000)
     public void sendPressureReadings() {
         logger.info("Iniciando leitura do sensor");
         PressureDTO pressureDTO = sensorService.readSensorData();
