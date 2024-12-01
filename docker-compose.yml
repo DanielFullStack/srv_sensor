@@ -12,7 +12,7 @@ services:
     environment:
       - SERVER_PORT=8080
       - SENSOR_ID=sensor_1
-      - BACKEND_API_URL=http://172.18.0.4:8083/api/v1/ingestion/sensors
+      - BACKEND_API_URL=http://srv_ingestion:8083/api/v1/ingestion/sensors
       - SPRING_MAIN_ALLOW_BEAN_DEFINITION_OVERRIDING=true
       - SPRING_WEB_REACTIVE_BASE_PATH=/
 
@@ -29,7 +29,7 @@ services:
     environment:
       - SERVER_PORT=8081
       - SENSOR_ID=sensor_2
-      - BACKEND_API_URL=http://172.18.0.4:8083/api/v1/ingestion/sensors
+      - BACKEND_API_URL=http://srv_ingestion:8083/api/v1/ingestion/sensors
       - SPRING_MAIN_ALLOW_BEAN_DEFINITION_OVERRIDING=true
       - SPRING_WEB_REACTIVE_BASE_PATH=/
 
